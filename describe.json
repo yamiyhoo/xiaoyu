@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "tg_send",
+      "description": "Send a line, or one local image, to a Telegram chat through this bot. photo must be inside an allowed directory; a directory means the newest image inside it. chatId/chat picks the target, blank means the chat that last wrote.",
+      "tags": ["speak"],
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string", "maxLength": 4000, "description": "Text to send, or the caption when photo is set." },
+          "photo": { "type": "string", "maxLength": 512, "description": "Absolute path of an image file or a directory (the newest image inside is used)." },
+          "chatId": { "type": "string", "maxLength": 64, "description": "Optional chat id, \"last\", or part of a chat title." },
+          "chat": { "type": "string", "maxLength": 64, "description": "Optional chat title such as 示例群." },
+          "replyTo": { "type": "string", "maxLength": 32, "description": "Optional: \"auto\" hangs this message under the chat's last message, a number under that message id. Leave it empty to send a plain message that answers nobody in particular." }
+        }
+      },
+      "summary": {
+        "zh": "通过 Telegram bot 发一句话，或一张本机图片（限允许的目录）。",
+        "en": "Send a line, or one local image from an allowed directory, on Telegram."
+      }
+    }
+  ],
+  "events": [
+    {
+      "type": "telegram.message",
+      "description": {
+        "zh": "人在 Telegram 上发来的一条消息（只来自 allow 名单里的会话）。",
+        "en": "One message the person sent on Telegram, from an allow-listed chat only."
+      },
+      "trigger": "flush"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "cortico-world-telegram",
+  "version": "0.7.1",
+  "type": "module",
+  "description": "Cortico / Coopanion World: talk to your desktop pet through a Telegram bot (official Bot API, long polling). Owner-only commands, allow-listed chats, no webhook or public port. Fork adds group identity (title + id) in the event text, a per-person senderKey, and an optional replyTo.",
+  "author": "BigFatWhale",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yamiyhoo/xiaoyu.git"
+  },
+  "homepage": "https://github.com/yamiyhoo/xiaoyu#readme",
+  "bugs": {
+    "url": "https://github.com/yamiyhoo/xiaoyu/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "describe.json",
+    "README.md",
+    "LICENSE",
+    "install.ps1",
+    "install.bat",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "cortico-world",
+    "cortico",
+    "coopanion",
+    "telegram",
+    "telegram-bot",
+    "im",
+    "desktop-pet"
+  ],
+  "cortico": {
+    "kind": "world",
+    "api": 6,
+    "displayName": "Telegram",
+    "describe": "describe.json",
+    "tags": [
+      "im",
+      "external-setup"
+    ]
+  }
+}
